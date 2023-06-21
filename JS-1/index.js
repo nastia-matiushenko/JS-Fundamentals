@@ -50,7 +50,6 @@ alert(
 );
 
 // 8
-let second = 1;
 let minute = 60;
 let hour = 60 * minute;
 let day = hour * 24;

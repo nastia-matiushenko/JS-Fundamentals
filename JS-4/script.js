@@ -156,8 +156,8 @@ function showUsers(ids) {
 		.map((id) => {
 			try {
 				return showUser(id);
-			} catch (error) {
-				console.log(error.message);
+			} catch (ex) {
+				console.log(ex.message);
 			}
 		})
 		.filter((v) => v);

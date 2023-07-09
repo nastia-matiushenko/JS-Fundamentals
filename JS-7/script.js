@@ -144,7 +144,6 @@ const citiesSelector = document.querySelector("#cities");
 const text = document.querySelector(".text");
 
 countrySelector.addEventListener("change", (e) => {
-	const selectedCountryOption = e.target;
 	const selectedCountryValue = e.target.value;
 
 	const gerCities = ["Berlin", "Hamburg", "Kassel", "Dortmund"];

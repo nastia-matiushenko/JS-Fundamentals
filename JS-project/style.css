@@ -1,0 +1,18 @@
+.shopping-cart {
+    position: relative;
+    width: fit-content;
+    display: none;
+
+}
+
+.buy-items {
+    position: absolute;
+    right: 0;
+    top: -7px;
+}
+
+.fixed-shopping-cart {
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+}

@@ -13,18 +13,25 @@
 		<title>Paska</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-light bg-light mb-3">
+		<nav class="navbar sticky-top navbar-light bg-light mb-3">
 			<div class="container-fluid">
-				<a class="navbar-brand">Paska</a>
-				<form class="d-flex">
-					<input
-						class="form-control me-2"
-						type="search"
-						placeholder="Search"
-						aria-label="Search"
+				<a class="navbar-brand" href="#">
+					<img
+						src="images/bunny-icon.svg"
+						alt="Bunny icon"
+						class="d-inline-block align-text-top pb-2 bunny-icon"
 					/>
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
+					Paska
+				</a>
+
+				<div class="shopping-cart me-4">
+					<img
+						src="images/shopping-cart.svg"
+						class="cart-image"
+						alt="Shopping cart"
+					/>
+					<div class="buy-items">0</div>
+				</div>
 			</div>
 		</nav>
 
@@ -32,14 +39,56 @@
 			<div class="row"></div>
 		</div>
 
-        <div class="fixed-shopping-cart">
-            <div class="shopping-cart ms-auto">
-                <img src="images/shopping-cart.svg" class="cart-image" alt="Shopping cart" height="50px" width="50px">
-                <div class="buy-items">0</div>
-            </div>
-        </div>
-        
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="exampleModal"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Shopping cart</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body d-flex flex-column">
+						<div class="modal-body__title-row d-flex justify-content-between">
+							<span class="item-title">ITEM</span>
+							<span class="price-title">PRICE</span>
+							<span class="quantity-title">QUANTITY</span>
+						</div>
+						<hr />
+						<div
+							class="modal-body__main-row d-flex flex-column justify-content-between"
+						>
+							<div id="cart"></div>
 
+							<hr />
+							<div class="modal-body__cart-total d-flex justify-content-end">
+								<strong class="cart-total-title me-3">Total</strong>
+								<span class="cart-total-price" id="cart-total">50$</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script src="script.js"></script>
 		<script

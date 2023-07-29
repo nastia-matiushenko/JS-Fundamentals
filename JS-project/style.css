@@ -1,52 +1,46 @@
-
 * {
-    font-size: 100%;
-    font-family: "Montserrat Alternates", sans-serif;
+	font-size: 100%;
+	font-family: "Montserrat Alternates", sans-serif;
 }
 
-
 .shopping-cart {
-    position: fixed;
-    top: 14px;
-    right: 55px;
-    width: fit-content;
-
+	position: fixed;
+	top: 14px;
+	right: 55px;
+	width: fit-content;
 }
 
 .buy-items {
-    position: absolute;
-    right: -6px;
-    top: -8px;
-    background-color: beige;
-    border: beige;
-    border-radius: 10px;
-    padding: 0 4px;
-
+	position: absolute;
+	right: -6px;
+	top: -8px;
+	background-color: beige;
+	border: beige;
+	border-radius: 10px;
+	padding: 0 4px;
 }
 
 .main-row-quantity-input {
-    height: 34px;
-    width: 50px;
+	height: 34px;
+	width: 50px;
 }
 
 .cart-image {
-    height: 30px;
+	height: 30px;
 	width: 30px;
 }
 
 .bunny-icon {
-    width: 30px;
-    height: 30px;
+	width: 30px;
+	height: 30px;
 }
 
 .navbar {
-    background-color: #d9bc7c;
+	background-color: #d9bc7c;
 }
 
 .main-row-quantity-input {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield; 
-  }
-  
-
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}

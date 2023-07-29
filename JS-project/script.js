@@ -252,10 +252,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		generateShop(matchedCards);
 	}
 
-	$(".shopping-cart").click(() => {
-		renderFullCart();
-		$(".modal").modal("show");
-	})
-
-
+	function showCartModal() {
+		$(".shopping-cart").click(() => {
+			renderFullCart();
+			$(".modal").modal("show");
+		});
+	}
+	showCartModal();
 });

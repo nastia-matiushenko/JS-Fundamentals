@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const shopRow = document.querySelector(".row");
 	const cartIcon = document.querySelector(".buy-items");
+	const searchButton = document.querySelector(".search-btn");
 
 	const shopItems = [
 		{
@@ -8,15 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			img: "images/paska1.jpg",
 			alt: "Paska with strawberry marshamallow",
 			name: "Bunny Paska",
-			desc: "Strawberry marshamallow spread, covered with dry berries",
+			desc: "Marshamallow cover, strawberry mouss and dried cranberries",
 			price: 20,
 		},
 		{
 			id: "paska2",
 			img: "images/paska2.jpg",
 			alt: "Chocolate Paska covered with almond flakes",
-			name: "Choco Paska",
-			desc: "Chocolate dough covered with almond flakes",
+			name: "Sweet Nest Paska",
+			desc: "Chocolate dough covered with almond flakes and two eatable nests",
 			price: 25,
 		},
 		{
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			img: "images/paska3.jpg",
 			alt: "Paska without spread and painted eggs",
 			name: "Paska & Eggs set",
-			desc: "Vanila flavour, without spread and painted eggs",
+			desc: "Vanila filling, crusty cover and set of painted eggs",
 			price: 30,
 		},
 		{
@@ -32,13 +33,29 @@ document.addEventListener("DOMContentLoaded", function () {
 			img: "images/paska4.jpg",
 			alt: "Cinnamon Paska with the decorative flower",
 			name: "Cinnamon Paska",
-			desc: "Cinnamon filling with the decorative flower",
-			price: 15,
+			desc: "Cinnamon filling, raisins, blueberries, decorated with flowers",
+			price: 20,
+		},
+		{
+			id: "paska5",
+			img: "images/paska5.jpg",
+			alt: "Choco Paska with decorative red ribbon",
+			name: "Chocomoco Paska",
+			desc: "Chocolate glaze, choco drops and decorative red ribbon",
+			price: 25,
+		},
+		{
+			id: "paska6",
+			img: "images/paska6.jpg",
+			alt: "Cinnamon Paska with the decorative flower",
+			name: "Wedding Paska",
+			desc: "Dried fruits in and out, used almond flour and covered with meringue",
+			price: 35,
 		},
 	];
 
-	let generateShop = () => {
-		return (shopRow.innerHTML = shopItems
+	let generateShop = (productsToRender = shopItems) => {
+		shopRow.innerHTML = productsToRender
 			.map((el) => {
 				let { id, img, alt, name, desc, price } = el;
 				return `<div class="card shop-card col-md-4" >
@@ -52,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h5 class="card-title">${name}</h5>
             <p class="card-text">${desc}</p>
             <div class="d-flex align-items-center justify-content-between">
-                <p class="card-price p-0 m-0">${price}</p>
+                <strong class="card-price p-0 m-0">$${price}</strong>
                 <button
 					id="${id}"
 					type="button"
@@ -67,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>`;
 			})
-			.join(""));
+			.join("");
 	};
 
 	generateShop();
@@ -109,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	const buyButtons = document.querySelectorAll(".btn-primary");
 	buyButtons.forEach((button) => {
 		button.addEventListener("click", addPaskaToLocalStorage);
-		
 	});
 
 	function addPaskaToLocalStorage(event) {
@@ -130,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		setItemToLocaleStorage(cart);
 		renderFullCart();
-		
 	}
 
 	function changeLocalStorageQuantity(event) {
@@ -173,17 +188,17 @@ document.addEventListener("DOMContentLoaded", function () {
 				const { img, name, price, quantity, id } = product;
 
 				return `
-			<div class="main-row d-flex flex-row justify-content-between align-items-center">
+			<div class="main-row mt-3 d-flex flex-row justify-content-between align-items-center">
 								<div class="main-row-item">
 									<img class="main-row-item-picture" src="${img}" width="50px" height="50px">
 									<span class="main-row-item-name">${name}</span>
 								</div>
 								<div class="main-row-price">
-									<span class="main-row-price-amount">${price}$</span>
+									<span class="main-row-price-amount">$${price}</span>
 								</div>
 								<class class="main-row-quantity">
-									<input class="main-row-quantity-input" type="number" data-id="${id}" value="${quantity}" min="1">
-									<button class="btn btn-danger" data-id="${id}" type="button">REMOVE</button>
+								<input type="number" class="main-row-quantity-input" data-id="${id}" value="${quantity}" min="1"/>
+								<button class="btn btn-danger" data-id="${id}" type="button">REMOVE</button>
 								</class>
 							</div>
 			`;
@@ -201,9 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		const cart = getItemFromLocaleStorage();
 
 		const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
-		document.querySelector("#cart-total").innerHTML = total;
+		document.querySelector("#cart-total").innerHTML = "$" + total;
 	}
-	
+
 	function renderCartIconQuantity() {
 		const cart = getItemFromLocaleStorage();
 		const totalQuantity = cart.reduce((acc, cur) => acc + cur.quantity, 0);
@@ -216,5 +231,31 @@ document.addEventListener("DOMContentLoaded", function () {
 		renderCart();
 		renderCartIconQuantity();
 	}
+
+	const form = document.forms.creationForm;
+
+	form.onsubmit = (event) => {
+		event.preventDefault();
+	};
+
+	searchButton.addEventListener("click", searchMatchedWord);
+
+	function searchMatchedWord() {
+		const searchInput = document.querySelector(".form-control");
+
+		const searchedText = searchInput.value.toLowerCase();
+
+		let matchedCards = shopItems.filter((el) => {
+			return el.desc.toLowerCase().includes(searchedText);
+		});
+
+		generateShop(matchedCards);
+	}
+
+	$(".shopping-cart").click(() => {
+		renderFullCart();
+		$(".modal").modal("show");
+	})
+
 
 });

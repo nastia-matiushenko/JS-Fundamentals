@@ -1,7 +1,14 @@
+
+* {
+    font-size: 100%;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+
 .shopping-cart {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 14px;
+    right: 55px;
     width: fit-content;
 
 }
@@ -10,6 +17,11 @@
     position: absolute;
     right: -6px;
     top: -8px;
+    background-color: beige;
+    border: beige;
+    border-radius: 10px;
+    padding: 0 4px;
+
 }
 
 .main-row-quantity-input {
@@ -26,3 +38,15 @@
     width: 30px;
     height: 30px;
 }
+
+.navbar {
+    background-color: #d9bc7c;
+}
+
+.main-row-quantity-input {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield; 
+  }
+  
+

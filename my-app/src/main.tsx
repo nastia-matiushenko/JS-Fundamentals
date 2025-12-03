@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import ImageUpload from "./ImageUpload.tsx";
+import ScrollDemo from "./ScrollDemo.tsx";
 // default export from src/components/ImageUpload.tsx
 
 // or, if it's a named export
@@ -11,5 +12,6 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
     <ImageUpload />
+    <ScrollDemo />
   </StrictMode>
 );

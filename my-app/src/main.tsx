@@ -7,6 +7,7 @@ import ScrollDemo from "./ScrollDemo.tsx";
 import BrowserComp from "./BrowserComp.tsx";
 import "core-js/es/promise";
 import "core-js/es/array/find";
+import Validation from "./Validation.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -14,5 +15,6 @@ createRoot(document.getElementById("root")!).render(
     <ImageUpload />
     <ScrollDemo />
     <BrowserComp />
+    <Validation />
   </StrictMode>
 );

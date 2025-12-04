@@ -4,14 +4,15 @@ import "./index.css";
 import App from "./App.tsx";
 import ImageUpload from "./ImageUpload.tsx";
 import ScrollDemo from "./ScrollDemo.tsx";
-// default export from src/components/ImageUpload.tsx
+import BrowserComp from "./BrowserComp.tsx";
+import "core-js/es/promise";
+import "core-js/es/array/find";
 
-// or, if it's a named export
-// import { ImageUpload } from './components/ImageUpload'
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
     <ImageUpload />
     <ScrollDemo />
+    <BrowserComp />
   </StrictMode>
 );

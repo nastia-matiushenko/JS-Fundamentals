@@ -8,6 +8,7 @@ import BrowserComp from "./BrowserComp.tsx";
 import "core-js/es/promise";
 import "core-js/es/array/find";
 import Validation from "./Validation.tsx";
+import CssAnimationDemo from "./CssAnimationDemo.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,5 +17,6 @@ createRoot(document.getElementById("root")!).render(
     <ScrollDemo />
     <BrowserComp />
     <Validation />
+    <CssAnimationDemo />
   </StrictMode>
 );

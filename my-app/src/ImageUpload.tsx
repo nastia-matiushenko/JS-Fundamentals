@@ -13,14 +13,12 @@ export default function ImageUpload() {
 
     setOriginalSize(file.size);
 
-    // Preview (File API)
     const reader = new FileReader();
     reader.onload = () => {
       setPreview(reader.result as string);
     };
     reader.readAsDataURL(file);
 
-    // Compress using 3rd party library
     const options = {
       maxSizeMB: 0.3,
       maxWidthOrHeight: 800,

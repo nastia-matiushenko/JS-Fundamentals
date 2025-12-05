@@ -1,0 +1,49 @@
+.box {
+  width: 150px;
+  height: 50px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* 1) Animation that moves the element left → right → left */
+.move-animation {
+  animation: move 3s infinite ease-in-out;
+}
+
+@keyframes move {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(150px); }
+  100% { transform: translateX(0); }
+}
+
+/* 2) Animation that changes color */
+.color-animation {
+  animation: changeColor 3s infinite alternate;
+}
+
+@keyframes changeColor {
+  from { background-color: #4f46e5; }
+  to   { background-color: #ec4899; }
+}
+
+/* 3) Animation that grows height and width */
+.grow-animation {
+  animation: grow 2s infinite alternate ease-in-out;
+}
+
+@keyframes grow {
+  from {
+    width: 150px;
+    height: 50px;
+  }
+  to {
+    width: 220px;
+    height: 80px;
+  }
+}

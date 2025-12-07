@@ -1,4 +1,4 @@
-.box {
+.css-animation-demo .box {
   width: 150px;
   height: 50px;
   margin: 20px 0;
@@ -12,7 +12,7 @@
 }
 
 /* 1) Animation that moves the element left → right → left */
-.move-animation {
+.css-animation-demo .move-animation {
   animation: move 3s infinite ease-in-out;
 }
 
@@ -23,7 +23,7 @@
 }
 
 /* 2) Animation that changes color */
-.color-animation {
+.css-animation-demo .color-animation {
   animation: changeColor 3s infinite alternate;
 }
 
@@ -32,18 +32,17 @@
   to   { background-color: #ec4899; }
 }
 
-/* 3) Animation that grows height and width */
-.grow-animation {
+/* 3) Animation that grows using scale (prevents layout shift) */
+.css-animation-demo .grow-animation {
   animation: grow 2s infinite alternate ease-in-out;
+  transform-origin: center center;
 }
 
 @keyframes grow {
   from {
-    width: 150px;
-    height: 50px;
+    transform: scale(1);
   }
   to {
-    width: 220px;
-    height: 80px;
+    transform: scale(1.47);
   }
 }

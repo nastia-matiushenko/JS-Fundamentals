@@ -2,7 +2,7 @@ import "./CssAnimationDemo.css";
 
 export default function CssAnimationDemo() {
   return (
-    <div style={{ padding: "40px" }}>
+    <div className="css-animation-demo" style={{ padding: "40px" }}>
       <h2>CSS Animation Demo</h2>
 
       <div className="box move-animation">Move Animation</div>

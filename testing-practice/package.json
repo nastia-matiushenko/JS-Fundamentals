@@ -1,0 +1,30 @@
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "A pet project to practice testing skills including TDD, BDD, unit testing, and code coverage",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:verbose": "jest --verbose",
+    "test:calculator": "jest calculator.test.js",
+    "test:validator": "jest validator.test.js",
+    "test:formatter": "jest formatter.test.js",
+    "test:components": "jest Button.test.js Input.test.js",
+    "test:api": "jest userApi.test.js"
+  },
+  "keywords": [
+    "testing",
+    "jest",
+    "tdd",
+    "bdd",
+    "unit-testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
+

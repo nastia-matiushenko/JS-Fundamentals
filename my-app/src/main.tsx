@@ -1,14 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import ImageUpload from "./ImageUpload.tsx";
-import ScrollDemo from "./ScrollDemo.tsx";
-import BrowserComp from "./BrowserComp.tsx";
+import App from "./components/App.tsx";
+import ImageUpload from "./components/ImageUpload.tsx";
+import ScrollDemo from "./components/ScrollDemo.tsx";
+import BrowserComp from "./components/BrowserComp.tsx";
 import "core-js/es/promise";
 import "core-js/es/array/find";
-import Validation from "./Validation.tsx";
-import CssAnimationDemo from "./CssAnimationDemo.tsx";
-import EmbeddedViewDemo from "./EmbeddedViewDemo.tsx";
+import Validation from "./components/Validation.tsx";
+import CssAnimationDemo from "./components/CssAnimationDemo.tsx";
+import EmbeddedViewDemo from "./components/EmbeddedViewDemo.tsx";
+import ButtonDemo from "./components/ButtonDemo.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,5 +20,7 @@ createRoot(document.getElementById("root")!).render(
     <Validation />
     <CssAnimationDemo />
     <EmbeddedViewDemo />
+    <ButtonDemo />
   </StrictMode>
 );
+

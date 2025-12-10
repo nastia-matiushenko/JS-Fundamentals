@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixins";
+@import "./functions";
+
+.button {
+  @include button-base;
+  background: $primary;
+  color: white;
+
+  &:hover {
+    background: darken($primary, 10%);
+  }
+
+  &--danger {
+    background: $danger;
+
+    &:hover {
+      background: darken($danger, 10%);
+    }
+  }
+
+  &__icon {
+    margin-right: spacing(0.5);
+  }
+}

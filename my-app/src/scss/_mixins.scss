@@ -1,0 +1,13 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-base {
+  border: none;
+  cursor: pointer;
+  font-family: $font-stack;
+  padding: $base-spacing $base-spacing * 2;
+  border-radius: $radius;
+}
